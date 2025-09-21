@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISHA PREDICTION 🥎🏏</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0c2461 0%, #1e3799 30%, #0c2461 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Cricket field pattern overlay */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 35px 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Logo with cricket ball effect */
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 4px #ff5722, 0 0 20px rgba(255, 87, 34, 0.7);
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      color: #ffcc00;
+    }
+
+    .subscribers {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #e0e0e0;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 8px 15px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    /* Timer with cricket stumps design */
+    .timer-container {
+      margin: 25px 0;
+    }
+
+    .timer {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffcc00;
+      padding: 12px 25px;
+      border-radius: 12px;
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.3);
+      position: relative;
+      border: 2px solid #ff5722;
+      box-shadow: 0 0 15px rgba(255, 87, 34, 0.4);
+    }
+
+    .timer::before, .timer::after {
+      content: '🏏';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+    }
+
+    .timer::before {
+      left: -25px;
+    }
+
+    .timer::after {
+      right: -25px;
+    }
+
+    /* Join Button with cricket theme */
+    .join-btn {
+      display: inline-block;
+      padding: 16px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(45deg, #ff5722, #ff8a65);
+      border-radius: 50px;
+      text-decoration: none;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.5px;
+      border: none;
+    }
+
+    .join-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 87, 34, 0.6);
+    }
+
+    .join-btn:active {
+      transform: scale(0.98);
+    }
+
+    .join-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      transform: rotate(-45deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(-45deg); }
+      100% { transform: translateX(100%) rotate(-45deg); }
+    }
+
+    /* Cricket ball animation in background */
+    .cricket-ball {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(45deg, #ff5722, #cc0000);
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.3;
+      animation: moveBall 15s linear infinite;
+    }
+
+    @keyframes moveBall {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(calc(100vw - 40px), 100px); }
+      50% { transform: translate(calc(100vw - 80px), calc(100vh - 100px)); }
+      75% { transform: translate(0, calc(100vh - 150px)); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+      h1 { font-size: 22px; }
+      .subscribers { font-size: 14px; }
+      .timer { font-size: 20px; padding: 10px 20px; }
+      .join-btn { font-size: 16px; padding: 14px 30px; }
+      .logo { width: 120px; height: 120px; }
+      
+      .timer::before {
+        left: -20px;
+      }
+      
+      .timer::after {
+        right: -20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated cricket balls in background -->
+  <div class="cricket-ball" style="top: 20%; left: 5%; animation-delay: 0s;"></div>
+  <div class="cricket-ball" style="top: 60%; left: 10%; animation-delay: 2s;"></div>
+  <div class="cricket-ball" style="top: 30%; left: 80%; animation-delay: 5s;"></div>
+  <div class="cricket-ball" style="top: 80%; left: 70%; animation-delay: 7s;"></div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpg" alt="DISHA PREDICTION Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIgZmlsbD0iIzE2N2I1NiIvPjxwYXRoIGQ9Ik03MCA3MEgxMzBWMTMwSDcwVjcwWiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNODAgODBIMTIwVjEyMEg4MFY4MFoiIGZpbGw9IiNmZmMzMzMiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwIiBmaWxsPSJ3aGl0ZSIvPjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiPkRJU0hBPC90ZXh0Pjwvc3ZnPg=='">
+    </div>
+    <h1>DISHA PREDICTION 🥎🏏</h1>
+    <div class="subscribers">72,192 subscribers</div>
+    <a href="https://t.me/+ECGJw7RUFmc1MWU9" class="join-btn">Join [DISHA PREDICTION 🥎🏏] Channel</a>
+    <div class="timer-container">
+      <div class="timer" id="timer">60</div>
+    </div>
+  </div>
+
+  <script>
+    let time = 60;
+    const timerElement = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+      time--;
+      timerElement.textContent = time;
+      
+      // Change color when time is running out
+      if(time <= 10) {
+        timerElement.style.color = '#ff3547';
+        timerElement.style.animation = 'shake 0.5s infinite';
+      }
+      
+      if(time <= 0) {
+        clearInterval(countdown);
+        timerElement.textContent = "Time Up!";
+        timerElement.style.animation = '';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
